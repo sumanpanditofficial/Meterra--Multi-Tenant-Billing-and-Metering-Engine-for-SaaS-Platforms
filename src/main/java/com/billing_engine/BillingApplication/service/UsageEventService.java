@@ -26,7 +26,7 @@ public class UsageEventService {
                 .orElseThrow(()-> new IllegalArgumentException("Tenant not found in the database, please enter the correct tenant ID"));
 
         if(usageEventRepository.existsByTenantIdAndIdempotencyKey(usageEventDTO.getTenantId(), usageEventDTO.getIdempotencyKey())){
-            throw new IllegalArgumentException("Duplicate event, This event has already been processed");
+            throw new IllegalArgumentException("You have entered duplicate event, This event has already been processed");
         }
 
         usageEvent.setTenant(tenant);
