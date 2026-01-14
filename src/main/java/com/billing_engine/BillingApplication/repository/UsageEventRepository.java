@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UsageEventRepository extends JpaRepository<UsageEvent, Long>{
 
-    boolean existsByTenantIdANDIdempotencyKey(long TenantId, String idempotencyKey);
+    boolean existsByTenantIdAndIdempotencyKey(long TenantId, String idempotencyKey);
 }

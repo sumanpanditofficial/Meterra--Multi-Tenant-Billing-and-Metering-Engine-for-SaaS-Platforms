@@ -6,10 +6,8 @@ import java.time.LocalDateTime;
 
 @Data
 public class UsageEventDTO {
-    private long id;
-    private long tenantID;
+    private long tenantId;
     private String eventType;
     private long units;
-    private LocalDateTime event_timestamp;
-    private LocalDateTime createdAt;
+    private  String idempotencyKey;
 }

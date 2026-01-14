@@ -24,7 +24,7 @@ public class UsageEvent {
     private long units;
 
     @Column(name = "event_timestamp", nullable = false)
-    private LocalDateTime eventTimestamp;
+    private LocalDateTime eventTimestamp = LocalDateTime.now();
 
     @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt = LocalDateTime.now();
