@@ -6,7 +6,6 @@ import com.billing_engine.BillingApplication.service.TenantService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/tenants")
 public class TenantController {
 
     private final TenantService tenantService;
