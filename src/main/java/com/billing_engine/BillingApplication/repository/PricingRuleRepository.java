@@ -9,6 +9,6 @@ import java.util.List;
 @Repository
 public interface PricingRuleRepository extends JpaRepository<PricingRule, Long> {
 
-
+        PricingRule findByTenantIdAndActiveTrue(Long tenantId, String pricingType);
 
 }
