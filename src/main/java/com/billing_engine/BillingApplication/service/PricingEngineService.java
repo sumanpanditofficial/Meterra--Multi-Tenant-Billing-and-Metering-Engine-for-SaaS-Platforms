@@ -10,11 +10,11 @@ import java.math.BigDecimal;
 import java.util.Map;
 
 @Service
-public class PricingEngine {
+public class PricingEngineService {
     private final PricingRuleRepository pricingRuleRepository;
     private final ObjectMapper objectMapper;
 
-    PricingEngine(PricingRuleRepository pricingRuleRepository, ObjectMapper objectMapper){
+    PricingEngineService(PricingRuleRepository pricingRuleRepository, ObjectMapper objectMapper){
         this.pricingRuleRepository = pricingRuleRepository;
         this.objectMapper = objectMapper;
     }
