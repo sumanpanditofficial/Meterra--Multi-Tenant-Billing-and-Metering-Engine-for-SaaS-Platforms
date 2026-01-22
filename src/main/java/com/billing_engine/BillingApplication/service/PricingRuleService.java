@@ -28,6 +28,12 @@ public class PricingRuleService {
         Tenant tenant = tenantRepository.findById(pricingRuleDTO.getTenantId())
                 .orElseThrow(()-> new IllegalArgumentException("No Tenants exist with this "+pricingRuleDTO.getTenantId()+" Id"));
 
+        boolean exists = pricingRuleRepository.existsByTenantIdAndPricingTypeAndActiveTrue(tenant.getId(), pricingRuleDTO.getPricingType());
+
+        if(exists){
+            throw new IllegalArgumentException("For this tenant Id: "+tenant.getId()+" already pricing rule exists for the tenant and type");
+        }
+
         pricingRule.setTenant(tenant);
         pricingRule.setPricingType(pricingRuleDTO.getPricingType());
         pricingRule.setConfigJson(

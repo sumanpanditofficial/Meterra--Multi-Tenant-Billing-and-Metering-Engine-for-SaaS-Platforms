@@ -21,7 +21,7 @@ public class PricingEngineService {
 
     public BigDecimal calculateCost(Long tenantId, String pricingType, Long units){
 
-        PricingRule rule = pricingRuleRepository.findByTenantIdAndActiveTrue(tenantId, pricingType);
+        PricingRule rule = pricingRuleRepository.findByTenantIdAndPricingTypeAndActiveTrue(tenantId, pricingType);
         if(rule==null){
             throw new IllegalArgumentException("Tenant Id with: "+tenantId+" .There is no active pricing rule for this tenant");
         }
